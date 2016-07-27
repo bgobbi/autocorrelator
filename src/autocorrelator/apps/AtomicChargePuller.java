@@ -63,12 +63,13 @@ public class AtomicChargePuller
                   }
                   oechem.OESetSDData(mol, "AtomCharge", Double.toString(charge));
                   
-               } else {
-                  oechem.OESetSDData(mol, "AtomCharge", "");
-               }
+               //} else {
+               //   oechem.OESetSDData(mol, "AtomCharge", "");
+               //}
 
                oechem.OEWriteMolecule(ofs, mol);
                if ( ( count % 100 ) == 0 ) System.err.println(count + " molecules examined");
+         }
          
          ifs.close();
          ofs.close();
